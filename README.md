@@ -26,9 +26,9 @@ It will extract data from html. The program will extract the data, and use it to
 If you include some kind of _quantitative analysis,_ that would be good.
 
 ## Architecture Diagram
-Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
+![ScreenShot](Proc.jpg)
 
-Create several paragraphs of narrative to explain the pieces and how they interoperate.
+The rain and power data will be written beforehand in html in the file. The procedures will extract the data from the html in the file, and move the data into two lists, one list being the rain data numbers, and the other list being the power data list. The two lists will be handed to a function which will convert them into list of vectors. Each vector will have two numbers, one a power data number, and the other a rain data number. The list will then be handed to a function which will use the list to create a scatterplot graph of the data. 
 
 ## Schedule
 Explain how you will go from proposal to finished product. 
