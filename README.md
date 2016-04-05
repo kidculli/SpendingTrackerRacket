@@ -20,12 +20,9 @@ Explain exactly what you'll have at the end. What will it be able to do at the l
 
 What exactly will you produce at the end of the project? A piece of software, yes, but what will it do? Here are some questions to think about (and answer depending on your application).
 
-Will it run on some data, like batch mode? Will you present some analytical results of the processing? How can it be re-run on different source data?
+It will extract data from html. The program will extract the data, and use it to graph the amount of rain by the amount of power produced. If I have time, later I will add extra features to allow the user to add new data to graph. Right now, it is not intended to be interactive. It will be shown to work when the user gets a graph. Right now, some of the lists can be shown. 
 
-Will it be interactive? Can you show it working? This project involves a live demo, so interactivity is good.
-
-### Evaluation of Results
-How will you know if you are successful? 
+### Evaluation of Result How will you know if you are successful? 
 If you include some kind of _quantitative analysis,_ that would be good.
 
 ## Architecture Diagram
@@ -45,15 +42,18 @@ You will be expected to turn in code, documentation, and data (as appropriate) a
 Write concrete steps for your schedule to move from concept to working system. 
 
 ### First Milestone (Fri Apr 15)
-What exactly will be turned in on this day? 
+First Milestone: A file filled with html should be turned in, along with procedures to extract the data from the file, and store it in the two lists. 
 
 ### Second Milestone (Fri Apr 22)
-What exactly will be turned in on this day? 
+The second milestone will be procedures to convert the data in the two lists two a list of vectors which is needed for creating a scatter-plot, and procedures taking that transformed data and using it to create a 2d graph. 
+
 
 ### Final Presentation (last week of semester)
-What additionally will be done in the last chunk of time?
+The project should be done at this point. We would simply add more features, such as perhaps adding another graph, and allowing the user to add data to be graphed.
 
 ## Group Responsibilities
+I, John Kuczynski, will be creating the file with the html. I will also be creating the procedures to extract the data, and store it in two lists.
+
 Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
 
 
