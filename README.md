@@ -1,16 +1,14 @@
-# PowerFromRain-
-Modeling the correlation between rain fall and hydroelectric power generation in the Pacific Northwest using Racket and open data sets.  
+# Spending Tracker 
+Using Optical Character Recognition technology to track and store user spending and present it in scatter plot form. 
 ### Statement
-This project is our first foray into the field of data science and data visualization. Data holds valuable insights into the processes that occur around us, indeed the field of data science is growing as more data is created. It is important for individuals and businesses to be able to extrapolate key information from large data sets. With our project we hope to test our hypothesis that rain fall and hydroelectric power generation correlate positively with each other.  
+This project is a revision of our original project in which we sought to model the correlation between hydro electric power generation and rain fall in the Pacific Northwest. We have decided to make our project more useful and interesting by combining several technologies that will allow a user to track thier own spending habits. Our solution uses optical character recognition to extract text from receipt images. The text will be parsed and data stored into MongoDB collection. Lastly the data will be plotted based on a filter query i.e. for last 7 days or last month of spending.  
 
 ### Analysis
 Approaches from classes that will be used in the project will be using map to create a list of numbers from a list of strings, state-modification, closure, and recursion. 
 
 ### Data set or other source materials
 
-Searching through [data.gov][data], we stumbled upon an interesting [data set][hydro]. This data set (excel) lists the amount of hydroelectric power generated monthly from the years 2000-2009 for many hydroelectric plants in the country. With this data set we came up with an idea to correlate and plot the relationship between rain fall and hydroelectric power generation. We originally wanted to focus on Massachusetts however, we were unable to find any plants from Massachusetts in the data set so we settled for Washington State. We were able to find data on the amount of [rain fall][rain] for this period. We tabulated the results into our own custom file. 
-
-In order to get the data from the data sets into a usable form, we are planning on manually creating a custom html file to format the data. We plan on using the racket html parsing lib to parse the data. A potential file will look like the following :
+After competing in the UMass Lowell Hawkathon 
 
 ```html 
 <data1> 
