@@ -62,26 +62,26 @@ This project will be successful if the program is able to successfully extract t
 ## Schedule
 
 ### First Milestone (Fri Apr 15)
-Configure HTTP request to send a binary image file for OCR analysis. 
-Create function to extract dollar value from JSON response 
+* Configure HTTP request to send a binary image file for OCR analysis. 
+* Create function to extract dollar value from JSON response 
 
 ### Second Milestone (Fri Apr 22)
-Set Up MongoDB server 
-Create insert function and query function using mongdb package. 
+* Set Up MongoDB server 
+* Create insert function and query function using mongdb package. 
 
 ### Final Presentation (last week of semester)
-Generate Weekly spending plot and monthly plot 
+* Generate Weekly spending plot and monthly plot 
 
 ## Group Responsibilities
 
 Cullin Lam - 
-  Configure HTTP request to take binary file. 
-  Set Up MongoDB server 
-  Create insert/ query function 
+  * Configure HTTP request to take binary file. 
+  * Set Up MongoDB server 
+  * Create insert/ query function 
   
 John Kuczynski - 
-  Create function to parse JSON response 
-  Generate plots 
+  * Create function to parse JSON response 
+  * Generate plots 
 
 
 <!-- Links -->
