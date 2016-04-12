@@ -8,13 +8,33 @@ Approaches from classes that will be used in the project will be using map to cr
 
 ### Data set or other source materials
 
-After competing in the UMass Lowell Hawkathon 
+After competing in the UMass Lowell Hawkathon, I (Cullin) was introduced to a the [HAVEN ON DEMAND][haven] API which provides many meachine learning api's for use for free with an API Key. For this project I thought it would be interesting to utilize their Optical Character Recognition Api which extracts text from images.  
 
-```html 
-<data1> 
-  <raindata>15</raindata> 
-  <hydrodata>50,000,000</hydrodata> 
-</data1>
+###Example Request 
+
+In order to use API we send an HTTP request to the correct URL with our parameters. Our sample image 
+![image](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSMKXbo_GQB-JNYOtEokCUJFpK40O2p2f8WrN3CrlsR1jJ20OFr)
+
+```
+"https://api.havenondemand.com/1/api/sync/ocrdocument/v1?url=http%3A%2F%2Fwww.thedetroitbureau.com%2Fwp-content%2Fuploads%2F2012%2F06%2Fsign-sharp-edges.jpeg&mode=scene_photo&apikey=82833b89-515e-4727-97ff-d8af21d53be3"
+```
+
+
+###Example Response 
+
+```json 
+{
+  "text_block": [
+    {
+      "text": "1- / • &apos; Q\n/ ! ; ! ; - -\n7 *\n!\n$\n,\nN\nX X\n;/\n, -;t\n! .\nA\nÉ &apos; . V tx: ; &quot;4 ( X M. Craig Parker\nEN N, Installation Services Man£*8€1&apos;\ngi;&apos; X ,N&gt;\nl gael 908 Boston Turnpike\nUnit 1\nShrewsbury, MA 01545 # . *\n{\nCell 508-797-7623\nOffice 774-275-2189\nFax 608-845-6076 N\nToll Free 877-903-3768\nMartin-C-Parker@HomeDepot.corn\n! 0\n1\n1 6/\n!\nl\n£\n&quot;&quot;Nr\n*&gt; ; &quot;\nw *\n**8 4 $ • ; XM X r\n!\n&apos; ! , #\n* %\nl&quot; l ! ; , &apos;\n* •\n; . . ! A (\n• • 4 • it&apos;\n@• • 0\nI /",
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 720
+    }
+  ]
+}
+
 ```
 With this file we plan on creating a function that will read the file and return either a single list of cons pairs for the rain data and hydro data points or a single list for each that will be zipped together with another function. The final plottable form of the data will be a single list of vectors each containing the data point pairs. 
 
@@ -53,6 +73,7 @@ Cullin Lam, will be creating a procedure that takes the result of parsing the ht
 
 
 <!-- Links -->
+[haven]:https://www.havenondemand.com
 [hydro]:https://catalog.data.gov/dataset/monthly-hydropower-generation-data-by-facility-us-bureau-of-reclamation
 [rain]:https://www.wunderground.com/history/airport/KSEA/2000/9/4/MonthlyHistory.html?req_city=&req_state=&req_statename=&reqdb.zip=&reqdb.magic=&reqdb.wmo=
 [data]:https://www.data.gov
