@@ -36,16 +36,23 @@ In order to use API we send an HTTP request to the correct URL with our paramete
 }
 
 ```
-With this file we plan on creating a function that will read the file and return either a single list of cons pairs for the rain data and hydro data points or a single list for each that will be zipped together with another function. The final plottable form of the data will be a single list of vectors each containing the data point pairs. 
+With this data we plan on parsing the response string using JSON and regular expressions to extract the final dollar value amount from the image to be used as the total amount of money spent on that purchase. This data will be stored into our MongoDB database with the following schema: 
+
+```json
+{
+  date_created: number(ms since unix epoch)
+  total: number(total dollar value spent)
+}
+```
 
 
 ### Deliverable and Demonstration
 
-The program will extract the data, and use it to graph the amount of rain by the amount of power produced. If we have time, later we will add extra features to allow the user to add new data to graph. Right now, it is not intended to be interactive. It will be shown to work when the user gets a graph. Right now, some of the lists can be shown. 
+The program will take as input an image file of the purchase receipt. It will then insert the transaction into the database. The program will also be able to plot graphs using the available data in the database with the x axis as date time and the y axis as the total amount spent on that day. 
 
 ### Evaluation of Result How will you know if you are successful? 
 
-This project will be successful if the program is able to correctly plot the data points provided to it. If the plot correctly conveys the information in the data we will consider the result a success. 
+This project will be successful if the program is able to successfully extract the dollar amount from an image and insert it into the database. In addition the program should be able to produce a plot using the most recent data points in the database. 
 
 
 ## Architecture Diagram
