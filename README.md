@@ -56,32 +56,35 @@ This project will be successful if the program is able to successfully extract t
 
 
 ## Architecture Diagram
-![ScreenShot](Proc.jpg)
+![ScreenShot](https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/SpendingTracker%20Diagram.png)
 
-The rain and power data will be written beforehand in html in the file. The procedures will extract the data from the html in the file, and move the data into two lists, one list being the rain data numbers, and the other list being the power data list. The two lists will be handed to a function which will convert them into list of vectors. Each vector will have two numbers, one a power data number, and the other a rain data number. The list will then be handed to a function which will use the list to create a scatterplot graph of the data. 
 
 ## Schedule
 
 ### First Milestone (Fri Apr 15)
-First Milestone: A file filled with html should be turned in, along with procedures to extract the data from the file, and store it in the two lists. 
+* Configure HTTP request to send a binary image file for OCR analysis. 
+* Create function to extract dollar value from JSON response 
 
 ### Second Milestone (Fri Apr 22)
-The second milestone will be procedures to convert the data in the two lists two a list of vectors which is needed for creating a scatter-plot, and procedures taking that transformed data and using it to create a 2d graph. 
-
+* Set Up MongoDB server 
+* Create insert function and query function using mongdb package. 
 
 ### Final Presentation (last week of semester)
-The project should be done at this point. We would simply add more features, such as perhaps adding another graph, and allowing the user to add data to be graphed. If time permits we may explore graphing a 3d plot. 
+* Generate Weekly spending plot and monthly plot 
 
 ## Group Responsibilities
-I, John Kuczynski, will be creating the file with the html. I will also be creating the procedures to extract the data, and store it in two lists.
 
-Cullin Lam, will be creating a procedure that takes the result of parsing the html file and converting the data points into a list of coordinate vectors. This list will then be passed to a plot function that will plot the data and configure the x and y axis with appropriate tick marks and labels. 
-
+Cullin Lam - 
+  * Configure HTTP request to take binary file. 
+  * Set Up MongoDB server 
+  * Create insert/ query function 
+  
+John Kuczynski - 
+  * Create function to parse JSON response 
+  * Generate plots 
 
 
 <!-- Links -->
 [haven]:https://www.havenondemand.com
-[hydro]:https://catalog.data.gov/dataset/monthly-hydropower-generation-data-by-facility-us-bureau-of-reclamation
-[rain]:https://www.wunderground.com/history/airport/KSEA/2000/9/4/MonthlyHistory.html?req_city=&req_state=&req_statename=&reqdb.zip=&reqdb.magic=&reqdb.wmo=
-[data]:https://www.data.gov
+
 
