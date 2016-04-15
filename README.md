@@ -13,7 +13,7 @@ After competing in the UMass Lowell Hawkathon, I (Cullin) was introduced to a th
 ###Example Request 
 
 In order to use API we send an HTTP request to the correct URL with our parameters. Our sample image 
-![image](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSMKXbo_GQB-JNYOtEokCUJFpK40O2p2f8WrN3CrlsR1jJ20OFr)
+![image](ocrtest.jpg)
 
 ```
 "https://api.havenondemand.com/1/api/sync/ocrdocument/v1?url=http%3A%2F%2Fwww.thedetroitbureau.com%2Fwp-content%2Fuploads%2F2012%2F06%2Fsign-sharp-edges.jpeg&mode=scene_photo&apikey=82833b89-515e-4727-97ff-d8af21d53be3"
