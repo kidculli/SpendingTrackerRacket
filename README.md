@@ -58,6 +58,8 @@ This project will be successful if the program is able to successfully extract t
 ## Architecture Diagram
 ![ScreenShot](https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/SpendingTracker%20Diagram.png)
 
+## Current Status (Fri Apr 15)
+We have accomplished more than what we set out to do for Milestone 1. In addition to configuring an [HTTP request][ocr] to the Haven On Demand OCR API to send binary image files and creating a function to [parse][parse] dollar values from the response we also were able to setup a mongoDB server and create a purchases collection. Using the [mongo-db racket library][mongo] we were able to create [functions][func] that insert and query records in the database and filters them based on date. We have thus finished quite a bit and are looking to implement additional features for Milestone 2 and get the plot working.  
 
 ## Schedule
 
@@ -66,11 +68,13 @@ This project will be successful if the program is able to successfully extract t
 * Create function to extract dollar value from JSON response 
 
 ### Second Milestone (Fri Apr 22)
-* Set Up MongoDB server 
-* Create insert function and query function using mongdb package. 
+* Make Month Spending Plot 
+* Make Week Spending Plot 
+* Possibly make Day Spending Plot 
 
 ### Final Presentation (last week of semester)
-* Generate Weekly spending plot and monthly plot 
+* Reformat Code into modules 
+* Maybe make more interactive
 
 ## Group Responsibilities
 
@@ -86,5 +90,8 @@ John Kuczynski -
 
 <!-- Links -->
 [haven]:https://www.havenondemand.com
-
+[func]:https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/mongoconnect.rkt
+[mongo]:https://docs.racket-lang.org/mongodb/index.html
+[parse]:https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/HTML.rkt
+[ocr]: https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/ocrhaven.rkt
 
