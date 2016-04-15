@@ -16,7 +16,7 @@ In order to use API we send an HTTP request to the correct URL with our paramete
 ![image](ocrtest.jpg)
 
 ```
-"https://api.havenondemand.com/1/api/sync/ocrdocument/v1?url=http%3A%2F%2Fwww.thedetroitbureau.com%2Fwp-content%2Fuploads%2F2012%2F06%2Fsign-sharp-edges.jpeg&mode=scene_photo&apikey=82833b89-515e-4727-97ff-d8af21d53be3"
+"curl -X POST --form \"file=@ocrtest.jpg\" --form \"apikey=82833b89-515e-4727-97ff-d8af21d53be3\" https://api.havenondemand.com/1/api/sync/ocrdocument/v1"
 ```
 
 
@@ -38,7 +38,7 @@ In order to use API we send an HTTP request to the correct URL with our paramete
 ```
 With this data we plan on parsing the response string using JSON and regular expressions to extract the final dollar value amount from the image to be used as the total amount of money spent on that purchase. This data will be stored into our MongoDB database with the following schema: 
 
-```json
+```
 {
   date_created: number(ms since unix epoch)
   total: number(total dollar value spent)
