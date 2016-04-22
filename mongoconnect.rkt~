@@ -1,0 +1,5 @@
+#lang racket
+(require db/mongodb/basic/main)
+
+;; connect to my digital ocean mongo server 
+(define conn (create-mongo #:host "159.203.164.155" #:port 27017))
