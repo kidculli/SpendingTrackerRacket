@@ -20,7 +20,17 @@
 (require racket/date)
 (require plot)
 (require data/ring-buffer)
+;;  user functions *************************************
+(define (ocr-insert path)
+  ;; calls haven api, parse respsonse to list of $ values, gets last $ value, removes dollar sign, converts to number , inserts into db  
+  (insert-purchase (current-milliseconds) (str-to-num (trimmer (last (rs (ocr-file path)))))))
 
+(define (graph-week)
+  (let ((week-purchases (query-purchases)))
+    (begin
+      (define s (storeDays))
+      (s 'load-and-get-graph week-purchases))))
+  
 
 ;(define (ocr-haven-file file-path)
 ;"curl -X POST --form \"file=@grocerytest.jpg\" --form \"apikey=82833b89-515e-4727-97ff-d8af21d53be3\" https://api.havenondemand.com/1/api/sync/ocrdocument/v1"
@@ -64,7 +74,12 @@
 
 
 (date->string (seconds->date (/ (current-milliseconds) 1000)))
-;; find all records in collection 
+;; find all records in collection
+
+(define (query-purchases)
+  (let ((res (mongo-collection-find purchases (make-hasheq '()))))
+    (for/list ([e res]) (cons (hash-ref e 'date_created) (hash-ref e 'value)))))
+
 (define query (mongo-collection-find purchases (make-hasheq '())))
 (define (find-week records)
   (filter (lambda (record)
