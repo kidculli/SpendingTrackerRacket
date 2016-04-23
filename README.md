@@ -58,8 +58,11 @@ This project will be successful if the program is able to successfully extract t
 ## Architecture Diagram
 ![ScreenShot](https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/SpendingTracker%20Diagram.png)
 
-## Current Status (Fri Apr 15)
+## Status Milestone 1  (Fri Apr 15)
 We have accomplished more than what we set out to do for Milestone 1. In addition to configuring an [HTTP request][ocr] to the Haven On Demand OCR API to send binary image files and creating a function to [parse][parse] dollar values from the response we also were able to setup a mongoDB server and create a purchases collection. Using the [mongo-db racket library][mongo] we were able to create [functions][func] that insert and query records in the database and filters them based on date. We have thus finished quite a bit and are looking to implement additional features for Milestone 2 and get the plot working.  
+
+## Current Status Milestone 2 (Fri Apr 22) 
+Currently as our project stands we were able to cleanly join our files into a single main.rkt file in which we plan to run our demo. We created 2 functions, ocr-insert which performs optical character recognition of the image and inserts the total dollar value into the database and graph-week which graphs the last 7 days of spending in a histogram. Unfortunately we were unable to reach our goal of plotting a scatterplot for a month's worth of purchases. We hope to accompliah this by our demo date. 
 
 ## Schedule
 
@@ -68,13 +71,13 @@ We have accomplished more than what we set out to do for Milestone 1. In additio
 * Create function to extract dollar value from JSON response 
 
 ### Second Milestone (Fri Apr 22)
-* Make Month Spending Plot 
-* Make Week Spending Plot 
-* Possibly make Day Spending Plot 
+* ~~Make Month Spending Plot~~ 
+* Make Week Spending Plot
+* ~~Possibly make Day Spending Plot~~ 
 
 ### Final Presentation (last week of semester)
-* Reformat Code into modules 
-* Maybe make more interactive
+* Make Month Spending Plot
+* Add labels and titles to Graphs 
 
 ## Group Responsibilities
 
