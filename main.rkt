@@ -264,6 +264,20 @@
     (define start 0)
     (set! start (car (car (regexp-match-positions #rx"[0-9 \\.]" string))))
     (substring string start (string-length string))
+    (set! string (string-trim string))
+    (set! string (noSpace string))
+    string
+  )
+)
+
+(define (noSpace string)
+  (mytrim string (regexp-match-positions* #rx"[0-9\\.]" string)))
+
+
+(define (mytrim string list)
+  (cond
+    [(null? list) ""]
+    [(string-append (substring string (car (car list)) (cdr (car list))) (mytrim string (cdr list)))]
   )
 )
 
