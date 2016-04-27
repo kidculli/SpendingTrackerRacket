@@ -102,7 +102,8 @@
     (plot (list
            (lines data #:color 2 #:width 2)
            (points data #:color 1 #:line-width 2 #:label "$ Value"))
-          #:y-min 0 #:x-label "Date Time"))))
+          #:y-min 0 #:x-label "Date Time"
+          #:title "Month Spending"))))
 
 
 ;; iterate through cursor and return a list of cons pairs (date_created, value)
