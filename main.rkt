@@ -162,7 +162,12 @@
               (vector (car (ring-buffer-ref rb (modulo (+ Flag 7) 7))) (cdr (ring-buffer-ref rb (modulo (+ Flag 7) 7))))
                           )
            )
-          (plot (discrete-histogram graphList))
+         (let ((today (current-milliseconds)))
+          (plot (discrete-histogram graphList)
+                 #:title (string-join (list "Total Spending for Week" (date->string (seconds->date(/ (+ (- today week-ms) DayNum) 1000))) "to" (date->string (seconds->date (/ today 1000)))) " ")
+                 #:x-label "Day of the Week"
+                 #:y-label "Amount Spent $"
+                 ))
 
          ]
        )
