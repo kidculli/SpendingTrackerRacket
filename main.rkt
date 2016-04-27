@@ -93,6 +93,18 @@
                #t
                #f)) records))
 
+;; graph month of purchases scatter plot
+(define (graph-month)
+  (let((data  (map (lambda (p) (vector (/ (car p) 1000) (cdr p))) (find-month (query-purchases)))))
+  (parameterize
+      ([plot-x-ticks      (date-ticks #:number (length data) #:formats '("~m-~d-~y ~I:~M ~p"))]
+       [plot-y-label      "Amount Spent $"])
+    (plot (list
+           (lines data #:color 2 #:width 2)
+           (points data #:color 1 #:line-width 2 #:label "$ Value"))
+          #:y-min 0 #:x-label "Date Time"))))
+
+
 ;; iterate through cursor and return a list of cons pairs (date_created, value)
 ;(define raw (for/list ([e query]) e))
 ;(define ids (for/list ([e raw]) (hash-ref e '_id)))
