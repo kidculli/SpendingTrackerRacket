@@ -117,6 +117,52 @@ John Kuczynski -
   * Create function to parse JSON response 
   * Generate plots 
 
+## Favorite Racket expressions 
+
+Cullin Lam 
+  
+  ```racket 
+  (define week-ms 604800000)
+  (define (query-purchases)
+  (let ((res (mongo-collection-find purchases (make-hasheq '()))))
+    (for/list ([e res]) (cons (hash-ref e 'date_created) (hash-ref e 'value)))))
+  (define (find-week records)
+  (filter (lambda (record)
+            (if(<= (- (current-milliseconds) (car record)) week-ms)
+               #t
+               #f)) records))
+  ```
+  
+  This code snippet shows the power of filter as we can easily write a racket expression to filter our result set as opposed to working with an ill documented API. 
+  
+## How to Download and Run 
+
+This git repo can be cloned by using: 
+
+  ```
+  git clone https://github.com/oplS16projects/SpendingTrackerRacket.git
+  ```
+To run open main.rkt file with Dr. Racket to access the REPL. 
+
+To perform OCR and insert the result of an image of a receipt call :
+
+```
+(ocr-insert img-file-path) 
+```
+
+To plot week spending call: 
+
+```
+(graph-week) 
+```
+
+To plot month spending call: 
+
+```
+(graph-month) 
+```
+
+
 
 <!-- Links -->
 [haven]:https://www.havenondemand.com
