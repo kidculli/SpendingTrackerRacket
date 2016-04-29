@@ -61,7 +61,7 @@ This project will be successful if the program is able to successfully extract t
 ## Status Milestone 1  (Fri Apr 15)
 We have accomplished more than what we set out to do for Milestone 1. In addition to configuring an [HTTP request][ocr] to the Haven On Demand OCR API to send binary image files and creating a function to [parse][parse] dollar values from the response we also were able to setup a mongoDB server and create a purchases collection. Using the [mongo-db racket library][mongo] we were able to create [functions][func] that insert and query records in the database and filters them based on date. We have thus finished quite a bit and are looking to implement additional features for Milestone 2 and get the plot working.  
 
-## Current Status Milestone 2 (Fri Apr 22) 
+## Status Milestone 2 (Fri Apr 22) 
 Currently as our project stands we were able to cleanly join our files into a single main.rkt file in which we plan to run our demo. We created 2 functions, ocr-insert which performs optical character recognition of the image and inserts the total dollar value into the database and graph-week which graphs the last 7 days of spending in a histogram. Unfortunately we were unable to reach our goal of plotting a scatterplot for a month's worth of purchases. We hope to accomplish this by our demo date. 
 
 ## Test 1 
@@ -81,6 +81,14 @@ Currently as our project stands we were able to cleanly join our files into a si
 ![graph2](https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/graph2week1friday.png)
 
 As you can see graph 2 increased in y by 2 dollars.  
+
+## Final Status (Wed Apr 27) 
+
+We were able to make scatter plot for a month's worth of data. Unlike the histogram, using date time as the x axis plots points continuously and thus we do not aggregate cost sums per day instead we plotted each point independently. 
+
+![month](https://github.com/oplS16projects/SpendingTrackerRacket/blob/master/graphmonth.png)
+
+For our presentation we will be preparing sample images and attempt to also do a live ocr img insert. 
 
 
 ## Schedule
@@ -108,6 +116,52 @@ Cullin Lam -
 John Kuczynski - 
   * Create function to parse JSON response 
   * Generate plots 
+
+## Favorite Racket expressions 
+
+Cullin Lam 
+  
+  ```racket 
+  (define week-ms 604800000)
+  (define (query-purchases)
+  (let ((res (mongo-collection-find purchases (make-hasheq '()))))
+    (for/list ([e res]) (cons (hash-ref e 'date_created) (hash-ref e 'value)))))
+  (define (find-week records)
+  (filter (lambda (record)
+            (if(<= (- (current-milliseconds) (car record)) week-ms)
+               #t
+               #f)) records))
+  ```
+  
+  This code snippet shows the power of filter as we can easily write a racket expression to filter our result set as opposed to working with an ill documented API. 
+  
+## How to Download and Run 
+
+This git repo can be cloned by using: 
+
+  ```
+  git clone https://github.com/oplS16projects/SpendingTrackerRacket.git
+  ```
+To run open main.rkt file with Dr. Racket to access the REPL. 
+
+To perform OCR and insert the result of an image of a receipt call :
+
+```
+(ocr-insert img-file-path) 
+```
+
+To plot week spending call: 
+
+```
+(graph-week) 
+```
+
+To plot month spending call: 
+
+```
+(graph-month) 
+```
+
 
 
 <!-- Links -->
