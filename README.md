@@ -119,7 +119,7 @@ John Kuczynski -
 
 ## Favorite Racket expressions 
 
-Cullin Lam 
+#Cullin Lam 
   
   ```racket 
   (define week-ms 604800000)
